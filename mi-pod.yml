@@ -1,0 +1,12 @@
+apiVersion: 1
+kind: Pod
+metadata:
+        name: mi-pod
+        labels: 
+                componente: servidor-maven
+spec:
+        containers:
+                - name: mi-contenedor-maven
+                  image: endika98/contarpalabras
+                  ports:
+                          - containerPort: 3000

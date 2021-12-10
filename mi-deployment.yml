@@ -1,0 +1,19 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+        name: mi-deployment
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        component: servidor-maven
+        template:
+                metadata:
+                        labels:
+                                component: servidor-maven
+                spec:
+                        containers:
+                                - name: mi-pod
+                                image: endika98/contarpalabras
+                                ports:
+                                        - containerPort: 3000
